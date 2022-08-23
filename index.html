@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="./dist/output.css" rel="stylesheet">
+    <title>PesonaFM Wonosobo</title>
+</head>
+
+<body class="bg-fixed bg-no-repeat bg-cover font-ubuntu text-white"
+    style="background-image: url('./assets/img/background.jpg'); height: 100vh;">
+    <div class="container mx-auto py-1">
+        <div class="h-screen flex flex-col justify-between">
+            <div class="flex justify-between m-2">
+                <h1 class="text-2xl font-bold">Pesona FM</h1>
+                <div class="flex space-x-4">
+                    <a href="#" class="font-medium">News</a>
+                    <a href="#" class="font-medium">News</a>
+                    <a href="#" class="font-medium">News</a>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center flex-row">
+                <div
+                    class="text-center shadow-lg rounded-md group grid place-items-center w-60 backdrop-blur-lg bg-slate-500/2 h-40">
+                    <h1 class="text-2xl mt-2">
+                        Streaming Online
+                    </h1>
+                    <button
+                        class="btn shadow-md shadow-red-500/50 bg-red-500 rounded-lg m-2 btn-playstream group-hover:scale-105 text-md w-14 p-1 ">Play</button>
+                </div>
+                <div
+                    class="text-center shadow-lg rounded-md grid place-items-center group w-60 backdrop-blur-lg bg-slate-500/2 h-40">
+                    <h1 class="text-2xl group-hover:scale-105">News</h1>
+                </div>
+                <div
+                    class="text-center shadow-lg rounded-md grid place-items-center group w-60 backdrop-blur-lg bg-slate-500/2 h-40">
+                    <h1 class="text-2xl group-hover:scale-105">Gallery</h1>
+                </div>
+                <div
+                    class="text-center shadow-lg rounded-md grid place-items-center w-60 backdrop-blur-lg bg-slate-500/2 h-40">
+                    <h1 class="text-2xl mt-2 ">
+                        Social Media
+                    </h1>
+                    <div class="flex space-x-3 m-2">
+                        <div class="group">
+                            <div class="flex justify-center group-hover:scale-105">
+                                <img src="./assets/icons/001-instagram.png">
+                            </div>
+                            <a class="group-hover:scale-105" href="https://www.instagram.com/pesonafmwonosobo"
+                                target="_blank">Instagram</a>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-center group-hover:scale-105">
+                                <img src="./assets/icons/002-facebook.png">
+                            </div>
+                            <a class="group-hover:scale-105"
+                                href="https://www.facebook.com/profile.php?id=100039381652233"
+                                target="_blank">Facebook</a>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-center group-hover:scale-105">
+                                <img src="./assets/icons/003-youtube.png">
+                            </div>
+                            <a class="group-hover:scale-105"
+                                href="https://www.youtube.com/channel/UCklHzjhKAwuLFJJXPorNidQ"
+                                target="_blank">Youtube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mb-2">© 2022 DISKOMINFO</div>
+        </div>
+    </div>
+    <audio id="audio_1">
+        <source src="http://i.klikhost.com:8234/stream" type="audio/mpeg">
+    </audio>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $('.btn-playstream').click(function () {
+            currentvalue = document.getElementById('audio_1').value;
+            if (currentvalue == "on") {
+                document.getElementById('audio_1').pause();
+                document.getElementById("audio_1").value = "off";
+                console.log("off!");
+                $(".btn-playstream").html('Play');
+            } else {
+                document.getElementById('audio_1').play();
+                document.getElementById("audio_1").value = "on";
+                console.log("on!");
+                $(".btn-playstream").html('Pause');
+            }
+        });
+    </script>
+</body>
+
+</html>
